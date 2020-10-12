@@ -16,7 +16,7 @@
 
         <title>${msg("loginTitle", (realm.displayName!''))}</title>
 
-        <link rel="icon" href="${url.resourcesPath}/img/favicon.ico"/>
+        <link rel="icon" href="https://cdn.yipnyap.xyz/yipnyap-brand/favicon.ico"/>
 
         <#if properties.styles?has_content>
             <#list properties.styles?split(' ') as style>
