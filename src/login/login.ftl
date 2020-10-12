@@ -64,10 +64,13 @@
 
                         </div>
 
-                        <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
+                        <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}" style="display:flow-root;">
                             <input tabindex="4"
                                    class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
                                    name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                                   <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+                                        <a class="bx--btn bx--btn--secondary" type="button" href="${url.registrationUrl}">${msg("doRegister")}</a>
+                                   </#if>
                         </div>
                     </form>
                 </#if>
@@ -86,12 +89,6 @@
                 </div>
             </#if>
         </div>
-    <#elseif section = "info" >
-        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-            <div id="kc-registration">
-                <span>${msg("noAccount")} <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
-            </div>
-        </#if>
     </#if>
 
 </@layout.registrationLayout>
