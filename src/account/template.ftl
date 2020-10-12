@@ -47,7 +47,7 @@
                 <path d="M2 14.8h16V16H2zm0-3.6h16v1.2H2zm0-3.6h16v1.2H2zM2 4h16v1.2H2z"></path>
             </svg>
         </button>
-        <a class="bx--header__name" href="/">${ realm.displayName }&nbsp;<span>Accounts</span></a>
+        <a class="bx--header__name" href="https://yipnyap.xyz/?style=light"><img src="https://cdn.yipnyap.xyz/yipnyap-brand/vector/default-monochrome-white.svg" style="height: 2em;"> </a>
         <div class="bx--header__global">
             <#if referrer?has_content && referrer.url?has_content>
                 <button role="button" onclick="window.location = '${referrer.url}'"

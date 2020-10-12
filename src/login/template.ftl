@@ -44,7 +44,7 @@
            tabindex="0">
             Skip to main content
         </a>
-        <a class="bx--header__name" href="/">
+        <a class="bx--header__name" href="https://yipnyap.xyz/?style=light">
             ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
         </a>
     </header>
