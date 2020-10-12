@@ -1,12 +1,7 @@
-# Carbon theme for the keycloak
+# Keycloak Carbon
 
-[Carbon Design](https://carbondesignsystem.com/) for the [keycloak](https://www.keycloak.org)
+A theme for Keycloak, based off IBM [Carbon Design](https://carbondesignsystem.com/).
+
+This is a continuation with tweaks for the Yipnyap Brand to [httpsOmkar](https://github.com/httpsOmkar/carbon-keycloak-theme)'s theme.
 
 Special thanks for reference [GOV.UK](https://github.com/UKHomeOffice/keycloak-theme-govuk).
-
-## Screenshots
-
-### Login Page
-
-![Login Page](screenshots/login_page.png "Login page")
-
