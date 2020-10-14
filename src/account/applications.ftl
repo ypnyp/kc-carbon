@@ -41,70 +41,69 @@
             </#list>
         </div>
 
-        <table class="table table-striped table-bordered">
-            <thead>
-            <tr>
-                <td>${msg("application")}</td>
-                <td>${msg("availableRoles")}</td>
-                <td>${msg("grantedPermissions")}</td>
-                <td>${msg("additionalGrants")}</td>
-                <td>${msg("action")}</td>
-            </tr>
-            </thead>
+        <section class="bx--structured-list">
+            <div class="bx--structured-list-thead">
+                <div class="bx--structured-list-row bx--structured-list-row--header-row">
+                    <div class="bx--structured-list-th">${msg("application")}</div>
+                    <div class="bx--structured-list-th">${msg("availableRoles")}</div>
+                    <div class="bx--structured-list-th">${msg("grantedPermissions")}</div>
+                    <div class="bx--structured-list-th">${msg("additionalGrants")}</div>
+                    <div class="bx--structured-list-th">${msg("action")}</div>
+                </div>
+            </div>
+            <div class="bx--structured-list-tbody">
+                <#list applications.applications as application>
+                    <div class="bx--structured-list-row">
+                        <div class="bx--structured-list-td bx--structured-list-content--nowrap">
+                            <#if application.effectiveUrl?has_content><a href="${application.effectiveUrl}"></#if>
+                                <#if application.client.name?has_content>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
+                                <#if application.effectiveUrl?has_content></a></#if>
+                        </div>
 
-            <tbody>
-            <#list applications.applications as application>
-                <tr>
-                    <td>
-                        <#if application.effectiveUrl?has_content><a href="${application.effectiveUrl}"></#if>
-                            <#if application.client.name?has_content>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
-                            <#if application.effectiveUrl?has_content></a></#if>
-                    </td>
-
-                    <td>
-                        <#list application.realmRolesAvailable as role>
-                            <#if role.description??>${advancedMsg(role.description)}<#else>${advancedMsg(role.name)}</#if>
-                            <#if role_has_next>, </#if>
-                        </#list>
-                        <#list application.resourceRolesAvailable?keys as resource>
-                            <#if application.realmRolesAvailable?has_content>, </#if>
-                            <#list application.resourceRolesAvailable[resource] as clientRole>
-                                <#if clientRole.roleDescription??>${advancedMsg(clientRole.roleDescription)}<#else>${advancedMsg(clientRole.roleName)}</#if>
-                                ${msg("inResource")}
-                                <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
-                                <#if clientRole_has_next>, </#if>
+                        <div class="bx--structured-list-td">
+                            <#list application.realmRolesAvailable as role>
+                                <#if role.description??>${advancedMsg(role.description)}<#else>${advancedMsg(role.name)}</#if>
+                                <#if role_has_next>, </#if>
                             </#list>
-                        </#list>
-                    </td>
-
-                    <td>
-                        <#if application.client.consentRequired>
-                            <#list application.clientScopesGranted as claim>
-                                ${advancedMsg(claim)}<#if claim_has_next>, </#if>
+                            <#list application.resourceRolesAvailable?keys as resource>
+                                <#if application.realmRolesAvailable?has_content>, </#if>
+                                <#list application.resourceRolesAvailable[resource] as clientRole>
+                                    <#if clientRole.roleDescription??>${advancedMsg(clientRole.roleDescription)}<#else>${advancedMsg(clientRole.roleName)}</#if>
+                                    ${msg("inResource")}
+                                    <strong><#if clientRole.clientName??>${advancedMsg(clientRole.clientName)}<#else>${clientRole.clientId}</#if></strong>
+                                    <#if clientRole_has_next>, </#if>
+                                </#list>
                             </#list>
-                        <#else>
-                            <strong>${msg("fullAccess")}</strong>
-                        </#if>
-                    </td>
+                        </div>
 
-                    <td>
-                        <#list application.additionalGrants as grant>
-                            ${advancedMsg(grant)}<#if grant_has_next>, </#if>
-                        </#list>
-                    </td>
+                        <div class="bx--structured-list-td">
+                            <#if application.client.consentRequired>
+                                <#list application.clientScopesGranted as claim>
+                                    ${advancedMsg(claim)}<#if claim_has_next>, </#if>
+                                </#list>
+                            <#else>
+                                <strong>${msg("fullAccess")}</strong>
+                            </#if>
+                        </div>
 
-                    <td>
-                        <#if (application.client.consentRequired && application.clientScopesGranted?has_content) || application.additionalGrants?has_content>
-                            <button type='submit'
-                                    class='${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!}'
-                                    id='revoke-${application.client.clientId}' name='clientId'
-                                    value="${application.client.id}">${msg("revoke")}</button>
-                        </#if>
-                    </td>
-                </tr>
-            </#list>
-            </tbody>
-        </table>
+                        <div class="bx--structured-list-td">
+                            <#list application.additionalGrants as grant>
+                                ${advancedMsg(grant)}<#if grant_has_next>, </#if>
+                            </#list>
+                        </div>
+
+                        <div class="bx--structured-list-td">
+                            <#if (application.client.consentRequired && application.clientScopesGranted?has_content) || application.additionalGrants?has_content>
+                                <button type='submit'
+                                        class='${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!}'
+                                        id='revoke-${application.client.clientId}' name='clientId'
+                                        value="${application.client.id}">${msg("revoke")}</button>
+                            </#if>
+                        </div>
+                    </div>
+                </#list>
+            </div>
+        </section>
     </form>
 
 </@layout.mainLayout>
