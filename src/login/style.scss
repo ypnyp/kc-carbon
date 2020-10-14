@@ -13,6 +13,10 @@ body {
   margin: 0;
 }
 
+.bx--form-item > div {
+    width: -webkit-fill-available;
+}
+
 .SideBar {
   border-right: 1px #EEE solid;
 }
