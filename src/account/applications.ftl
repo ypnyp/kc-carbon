@@ -41,6 +41,18 @@
             </#list>
         </div>
 
+        <hr>
+        <h2>Application manager</h2>
+        <div data-notification="" class="bx--inline-notification bx--inline-notification--warning" role="alert">
+            <div class="bx--inline-notification__details">
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--inline-notification__icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"></path><path d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z" data-icon-path="inner-path" opacity="0"></path></svg>
+                <div class="bx--inline-notification__text-wrapper">
+                    <p class="bx--inline-notification__title">This is experimental and for advanced users only</p>
+                    <p class="bx--inline-notification__subtitle">Please be careful when using this. When you use this, we're not responsible for data loss, account lockout/suspention/termination, encryption failures, loss of eyesight, and/or the accidental summoning of demons.</p>
+                </div>
+            </div>
+        </div>
+
         <section class="bx--structured-list">
             <div class="bx--structured-list-thead">
                 <div class="bx--structured-list-row bx--structured-list-row--header-row">
