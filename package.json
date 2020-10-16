@@ -40,7 +40,6 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "@carbon/themes": "^10.21.0",
     "angular": "^1.8.0",
     "angular-cookies": "^1.7.9",
     "angular-resource": "^1.7.9",
