@@ -1,7 +1,7 @@
-$app-page-background: #ECECEC;
-$app-toolbar-background: #FFF;
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/theme-maps';
+$carbon--theme: $carbon--theme--g100;
 
-@import "~carbon-components/css/carbon-components.css";
+@import "~carbon-components/scss/globals/scss/styles";
 @import "style/dashboard";
 @import "style/common";
 @import "style/account";
@@ -15,8 +15,8 @@ body {
   margin: 0;
 }
 
-.SideBar {
-  border-right: 1px #EEE solid;
+.bx--side-nav {
+  background: transparent;
 }
 
 .PageTitle {

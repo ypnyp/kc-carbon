@@ -8,18 +8,8 @@
   }
 }
 
-.login-pf {
-  .bx--tile {
-    background-color: #FFF;
-  }
-}
-
 body, .bx--content {
-  background-color: #f3f3f3;
-
   @media (max-width: 66rem) {
-    background-color: transparent;
-
     .FixedLanguageSelect {
       .bx--select, select {
         width: 100%;
@@ -29,7 +19,7 @@ body, .bx--content {
 }
 
 .login-pf-page.bx--content {
-
+  background: transparent;
   .bx--form-item {
     margin-bottom: .5rem;
   }
@@ -37,7 +27,6 @@ body, .bx--content {
   .bx--tile {
     max-width: 30rem;
     margin: 0 auto;
-    background-color: #FFF;
     padding: 1.1rem;
 
     &.bx--wide {
